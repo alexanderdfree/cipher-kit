@@ -1,13 +1,7 @@
-import java.util.Scanner;
 public class CaesarCipher
 {
     public static String Encryptor(String code, int offset2)
     {
-        /*Scanner scanXD = new Scanner(System.in);
-        System.out.print("What message would you like to decrypt? ");
-        String ciphertext = scanXD.nextLine();
-        System.out.print("What is the key for the cipher? ");
-        Scanner scanXD2 = new Scanner(System.in);*/
         int offset = offset2 % 26;
         String plaintext = "";
         for (int i = 0; i < code.length(); i++) {
@@ -27,11 +21,6 @@ public class CaesarCipher
     }
     public static String Decryptor(String code, int offset2)
     {
-        /*Scanner scanXD = new Scanner(System.in);
-        System.out.print("What message would you like to decrypt? ");
-        String ciphertext = scanXD.nextLine();
-        System.out.print("What is the key for the cipher? ");
-        Scanner scanXD2 = new Scanner(System.in);*/
         int offset = offset2 % 26;
         String plaintext = "";
         for (int i = 0; i < code.length(); i++) {
@@ -50,18 +39,16 @@ public class CaesarCipher
         return plaintext;
     }
    public static void main(String[] args){
-      Scanner scan = new Scanner(System.in);
-      System.out.print("What message would you like to decrypt? ");
-      String ciphertext = scan.nextLine();
-      System.out.print("What is the key for the cipher? ");
-      Scanner scanXD2 = new Scanner(System.in);*/
-   
-   
-   
-   
-   
-   
-   
+      System.out.println("What message would you like to decrypt? ");
+      String codeD = StdIn.readString();
+      System.out.println("What is the key? ");
+      int keyD = StdIn.readInt();
+      System.out.println("Your decrypted message is: " + CaesarCipher.Decryptor(codeD, keyD));
+      System.out.println("What message would you like to encrypt? ");
+      String codeE = StdIn.readString();
+      System.out.println("What is the key? ");
+      int keyE = StdIn.readInt();
+      System.out.println("Your decrypted message is: " + CaesarCipher.Encryptor(codeE, keyE));
    }
 }
 
