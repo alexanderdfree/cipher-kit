@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class CaesarCipher
 {
     public static String Encryptor(String code, int offset2)
@@ -48,6 +49,19 @@ public class CaesarCipher
         }
         return plaintext;
     }
-
+   public static void main(String[] args){
+      Scanner scan = new Scanner(System.in);
+      System.out.print("What message would you like to decrypt? ");
+      String ciphertext = scan.nextLine();
+      System.out.print("What is the key for the cipher? ");
+      Scanner scanXD2 = new Scanner(System.in);*/
+   
+   
+   
+   
+   
+   
+   
+   }
 }
 
