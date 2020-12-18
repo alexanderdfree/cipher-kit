@@ -9,11 +9,20 @@ public class CaesarCipher
         Scanner scanXD2 = new Scanner(System.in);*/
         int offset = offset2 % 26;
         String plaintext = "";
-        for (int i = 0; i < code.length()+1; i++) {
-            char c = code.charAt(i);
-            int realid = (c + offset - 96) % 26;
+        for (int i = 0; i < code.length(); i++) {
+            String c1 = code.substring(i, i+1);
+            char c = c1.charAt(0);
+            if (c <= 'z' && c >= 'a') {
+               int realid = 97 + (c-97 + offset)%26;
+            }
+            else if (c <= 'Z' && c >= 'A') {
+               int realid = 65 + (c-65 + offset)%26;
+            }
+            
             char realchar = (char)realid;
             plaintext += realchar;
+            
+            
             /*if (xd <= 'z' && xd >= 'a') {
                 z = (char)(xd-x);
                 if (z < 'a') {
