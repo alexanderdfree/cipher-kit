@@ -2,16 +2,12 @@ public class VigenereCipher{
    public static String Encryptor(String plaintext, String key){
         String code = "a";
         String keyFull = "";
+        String key1 = "";
         for (int i = 0; i < plaintext.length(); i++) {
-            int iReset = i-key.length();
-            if (i >= key.length()){
-               //for loop
-               keyFull += key.substring(iReset, iReset+1); 
-            }
-            else{
-               keyFull += key.substring(i, i+1);
-            }
+            key1 += key;
+            keyFull += key1.substring(i, i+1);
         }
+        StdOut.println(keyFull);
         for (int i = 0; i < plaintext.length(); i++) {
             String c1 = plaintext.substring(i, i+1);
             String c11 = keyFull.substring(i, i+1);
@@ -34,6 +30,14 @@ public class VigenereCipher{
         return code;
    }
    public static String Decryptor(String code, String key){
+        String key1 = "";
+        if (key.length() != code.length()){
+         for (int i = 0; i < code.length(); i++) {
+            key1 += key;
+            keyFull += key1.substring(i, i+1);
+        }
+        //else, do first part of encrpyotr
+        }
         String plaintext = "";
         int realid = 0;
         for (int i = 0; i < code.length(); i++) {
@@ -57,7 +61,6 @@ public class VigenereCipher{
             char realchar = (char)realid;
             plaintext += realchar;
         }
-        StdOut.println(plaintext);
         return plaintext;
    }
    public static void main(String[] args){
