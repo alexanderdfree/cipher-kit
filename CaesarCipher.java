@@ -28,10 +28,10 @@ public class CaesarCipher
             int realid = 0;
             char c = c1.charAt(0);
             if (c <= 'z' && c >= 'a') {
-               realid = c - (offset%26);
+               realid = 97 + (((c - 97) + (26 - offset))%26);
             }
             else if (c <= 'Z' && c >= 'A') {
-               realid = c - (offset%26);
+               realid = 65 + (((c - 65) + (26 - offset))%26);
             }
             char realchar = (char)realid;
             plaintext += realchar;
