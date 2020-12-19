@@ -16,17 +16,17 @@ public class VigenereCipher{
             
             int keyInt = 0;
             if (c <= 'z' && c >= 'a') {
-               keyInt = (((char)c-97)+((char)d)-97)%26+1;
+               keyInt = (((char)c-97)+((char)d)-97)%26;
                realid = 97 + keyInt;
             }
             else if (c <= 'Z' && c >= 'A') {
-               keyInt = (((char)c-65)+((char)d)-65)%26+1;
+               keyInt = (((char)c-65)+((char)d)-65)%26;
                realid = 65 + keyInt;
             }
             char realchar = (char)realid;
             code += realchar;
         }
-        return code;
+        return code.substring(1);
    }
    public static String Decryptor(String code, String key){
         String key1 = "";
