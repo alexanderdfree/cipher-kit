@@ -37,7 +37,7 @@ public class VigenereCipher{
         String plaintext = "";
         for (int i = 0; i < plaintext.length(); i++) {
             String c1 = plaintext.substring(i, i+1);
-            String c11 = keyFull.substring(i, i+1);
+            String c11 = key.substring(i, i+1);
             int realid = 0;
             char c = c1.charAt(0);
             char d = c11.charAt(0);
@@ -55,5 +55,17 @@ public class VigenereCipher{
             plaintext += realchar;
         }
         return plaintext;
+   }
+   public static void main(String[] args){
+      System.out.println("What message would you like to decrypt? ");
+      String codeD = StdIn.readString();
+      System.out.println("What is the key? ");
+      int keyD = StdIn.readInt();
+      System.out.println("Your decrypted message is: " + CaesarCipher.Decryptor(codeD, keyD));
+      System.out.println("What message would you like to encrypt? ");
+      String codeE = StdIn.readString();
+      System.out.println("What is the key? ");
+      int keyE = StdIn.readInt();
+      System.out.println("Your decrypted message is: " + CaesarCipher.Encryptor(codeE, keyE));
    }
 }
