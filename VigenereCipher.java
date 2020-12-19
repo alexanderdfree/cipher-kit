@@ -60,12 +60,12 @@ public class VigenereCipher{
       System.out.println("What message would you like to decrypt? ");
       String codeD = StdIn.readString();
       System.out.println("What is the key? ");
-      int keyD = StdIn.readInt();
-      System.out.println("Your decrypted message is: " + CaesarCipher.Decryptor(codeD, keyD));
+      String keyD = StdIn.readString();
+      System.out.println("Your decrypted message is: " + VigenereCipher.Decryptor(codeD, keyD));
       System.out.println("What message would you like to encrypt? ");
       String codeE = StdIn.readString();
       System.out.println("What is the key? ");
-      int keyE = StdIn.readInt();
-      System.out.println("Your decrypted message is: " + CaesarCipher.Encryptor(codeE, keyE));
+      String keyE = StdIn.readString();
+      System.out.println("Your decrypted message is: " + VigenereCipher.Encryptor(codeE, keyE));
    }
 }
