@@ -19,7 +19,7 @@ public class VigenereCipher{
             char c = c1.charAt(0);
             char d = c11.charAt(0);
             
-            int keyInt = (char)c;
+            int keyInt = 0;
             if (c <= 'z' && c >= 'a') {
                keyInt = (((char)c-97)+((char)d)-97)%26+1;
                realid = 97 + keyInt;
@@ -35,14 +35,14 @@ public class VigenereCipher{
    }
    public static String Decryptor(String code, String key){
         String plaintext = "";
-        for (int i = 0; i < plaintext.length(); i++) {
-            String c1 = plaintext.substring(i, i+1);
+        int realid = 0;
+        for (int i = 0; i < code.length(); i++) {
+            String c1 = code.substring(i, i+1);
             String c11 = key.substring(i, i+1);
-            int realid = 0;
             char c = c1.charAt(0);
             char d = c11.charAt(0);
             
-            int keyInt = (char)c;
+            int keyInt = 0;
             if (c <= 'z' && c >= 'a') {
                keyInt = (((char)c-97)+((char)d)-97)%26+1;
                realid = 97 + keyInt;
@@ -54,6 +54,7 @@ public class VigenereCipher{
             char realchar = (char)realid;
             plaintext += realchar;
         }
+        StdOut.println(plaintext);
         return plaintext;
    }
    public static void main(String[] args){
