@@ -7,7 +7,6 @@ public class VigenereCipher{
             key1 += key;
             keyFull += key1.substring(i, i+1);
         }
-        StdOut.println(keyFull);
         for (int i = 0; i < plaintext.length(); i++) {
             String c1 = plaintext.substring(i, i+1);
             String c11 = keyFull.substring(i, i+1);
@@ -31,30 +30,29 @@ public class VigenereCipher{
    }
    public static String Decryptor(String code, String key){
         String key1 = "";
+        String keyFull = "";
         if (key.length() != code.length()){
          for (int i = 0; i < code.length(); i++) {
             key1 += key;
             keyFull += key1.substring(i, i+1);
-        }
-        //else, do first part of encrpyotr
+        }}
+        else{
+        keyFull = key;
         }
         String plaintext = "";
         int realid = 0;
         for (int i = 0; i < code.length(); i++) {
             String c1 = code.substring(i, i+1);
-            String c11 = key.substring(i, i+1);
+            String c11 = keyFull.substring(i, i+1);
             char c = c1.charAt(0);
             char d = c11.charAt(0);
             
             int keyInt = 0;
             if (c <= 'z' && c >= 'a') {
                keyInt = (((char)c-97)+26-((char)d-97))%26;
-               //-((char)d-97))
-               //%26+1;
                realid = 97 + keyInt;
             }
             else if (c <= 'Z' && c >= 'A') {
-               //keyInt = (((char)c-65)+((char)d)-65)%26+1;
                keyInt = (((char)c-65)+26-((char)d-65))%26;
                realid = 65 + keyInt;
             }
